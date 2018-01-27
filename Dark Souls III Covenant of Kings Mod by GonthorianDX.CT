@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="26">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"Dark Souls III Covenant of Kings Mod by GonthorianDX"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{Base Addresses by Science Souls contributers,
+Covenant of Kings Mod By GonthorianDX}
+
+
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+OpenProcess("DarkSoulsIII.exe")
+
+autoAssemble([[
+aobscanmodule(Findit,DarkSoulsIII.exe,48 8B 05 ?? ?? ?? ?? 48 85 C0 ?? ?? 48 8b 40 ?? C3)
+registersymbol(Findit)
+]])
+local addr = getAddress("Findit")
+addr = addr + readInteger(addr + 3) + 7
+unregisterSymbol("BaseA")
+registerSymbol("BaseA", addr, true)
+
+autoAssemble([[
+aobscanmodule(Findit5,DarkSoulsIII.exe,48 89 5C 24 48 8B FA 48 8B D9 C7 44 24 20 00 00 00 00 48)
+registersymbol(Findit5)
+]])
+local addr = getAddress("Findit5")
+addr = addr + readInteger(addr+0x15)+25
+unregisterSymbol("Param")
+registerSymbol("Param", addr, true)
+
+--------------------------------------------------------------------
+
+DarkSoulsIIICovenantofKingsMod=decodeFunction('c-oCrTWb=R6rMHPlC}C/q:.6U0YwxmR2yw71vi(Q/AoL}f(]Jt=j#wyJ5zRM6XVkqQGb9;]s$/l1AJRAKgOTno1WPuWQDf(z,{%k-+,x@[G{g)Mq}$[eK$XQZr0A*,3braXd.+Uj*hKuawRb^%kVRe98]7=y67M*)RE6XQ#!IHx_7m%N^;?I6q?jdx}W(!6.z17qovr:byP+3*,p/s+T#Qe_9E4bpP]?oTE8^:UGx+ZLK:Axe,izaA%^J@9Wt*,8#NN^.vEtB5.qzRTopaa30GLO?dL(=5/e0imXYgHDch0n4:]}R;k(o0^7y_@E*.fsAt_nQDN%TncNnL+6*7Ar(I0z5Vx{/TQc;bz!aeL$Wn5vz!HrcH+u;rKgd+aeec^?F#a[BcL(z$VSkn}tsB{ZNr/mZk@BWIMI_SSV5rtSLmlGUFM0J.k(XzBPCl!GP]V5#YifOQ=2KnM9rval96DScxZWk+Nb-FZMPI[/PkP/V6fD%52@2PDkBzB3pRgZYo6vFLL1Q0mrcaxUenDhwqNz149nWuo8D#Y*TfrR:k.CT6M/L^Wx2/]}qqa3?T:!4mUD#P{;W_m4_2B;1}0ZamBKNuy9B*mCr!Gr=g+$d/Dw%W-near$HBKxEZS5Y+v=3o5vH0%+S[bW5pbUVAnhuEB=YLlCuJu89C^-b#}g)0).^s:U)3fh6=M7kb3XdjmT8,.I,qpjyo8T;Q4uFGgYp7._RvVMalPizyX!H!2ZEcw2Z0e*tJ$6zCSVmmhADLV!mO^L/e0G}=XU[.lF[-Vk0w*sdF(Bac[ggi5u4vgVcvsodMmY-d^z5:I_8}-QR@Zk%1dN6OTi0rupuM8BG[Iz]jgd[lPt-4}L^x_2!O3oT5U21{ixW#hm,0_R4bG:eoFXhgUdBfy(Ul4Uf%zCk2(3t%o/m.WIc);qUmoNOUhjMjowUoPY3_^$WDYtP9UKMzMMsgIdwpPmh^]h4($yYdxccXZ7wN{byKP?DMEp)t/gmWo?Pnf0OM9DfL@ZLh8heVF#FW0J*iU')
+DarkSoulsIIICovenantofKingsMod()
+
+[DISABLE]
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
