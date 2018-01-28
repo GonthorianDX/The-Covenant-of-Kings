@@ -6,7 +6,7 @@ A Dark Souls III Mod
 This is a Dark Souls III mod that opens up a new game mode.
 Essentially what this mod does is:
 
-Make enemies much tougher
+*Make enemies much tougher
 
 *You are permanently under the effect of the Dried Fingers and Ember
 
