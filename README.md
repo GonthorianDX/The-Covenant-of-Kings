@@ -20,3 +20,5 @@ Essentially what this mod does is:
 This mod requires Cheat Engine to be used
 
 Enjoy and have fun!
+
+For more stuff, check out my [Discord](https://Discord.gg/gP2Zdy9)
